@@ -40,7 +40,7 @@ class Api {
     }
   }
 
-  makeRequest() {
+  Future<Response<dynamic>> makeRequest(String path) {
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         options.headers['Accept'] = "application/json";
@@ -64,6 +64,6 @@ class Api {
         return handler.next(error);
       },
     ));
-    return _dio.get('/user');
+    return _dio.get(path);
   }
 }

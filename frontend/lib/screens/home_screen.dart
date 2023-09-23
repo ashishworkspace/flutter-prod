@@ -31,6 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('HomeScreen'),
         actions: [
+          IconButton(
+              onPressed: () {
+                context.go('/user');
+              },
+              icon: const Icon(Icons.person)),
           Center(
               child: BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {

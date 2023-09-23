@@ -24,9 +24,7 @@ export function verifyAccessToken(
         message: "Invalid access token",
       });
     }
-    console.log("start - verify");
     (req as any).userId = user.userId;
-    console.log("end - verify");
     next();
   });
 }

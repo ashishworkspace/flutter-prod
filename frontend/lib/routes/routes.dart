@@ -1,5 +1,6 @@
 import 'package:frontend/screens/home_screen.dart';
 import 'package:frontend/screens/login_screen.dart';
+import 'package:frontend/screens/user_screen.dart';
 import 'package:frontend/screens/wrapper.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,6 +21,12 @@ final GoRouter router = GoRouter(initialLocation: '/', routes: [
     path: '/home',
     builder: (context, state) {
       return const HomeScreen();
+    },
+  ),
+  GoRoute(
+    path: '/user',
+    builder: (context, state) {
+      return const UserScreen();
     },
   ),
 ]);

@@ -119,10 +119,7 @@ router.post("/refresh-token", async (req: Request, res: Response) => {
 });
 
 router.get("/user", verifyAccessToken, (req: Request, res: Response) => {
-  console.log("user");
-  console.log("start - user");
   const userId = (req as any).userId;
-  console.log("end - user");
   res.json({ userId: userId });
 });
 
