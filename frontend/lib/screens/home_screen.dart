@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 
 final keyController = TextEditingController();
-
 final valueController = TextEditingController();
 
 class HomeScreen extends StatefulWidget {
@@ -31,6 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('HomeScreen'),
         actions: [
+          IconButton(
+              onPressed: () {
+                context.go('/reminder');
+              },
+              icon: const Icon(Icons.date_range)),
           IconButton(
               onPressed: () {
                 context.go('/user');

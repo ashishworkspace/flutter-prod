@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:frontend/core/blocs/add_task/add_task_bloc.dart';
 import 'package:frontend/core/blocs/user/user_bloc.dart';
 import 'package:frontend/core/cubits/auth/auth_cubit.dart';
 import 'package:frontend/routes/routes.dart';
@@ -17,12 +18,16 @@ void main(List<String> args) async {
     Hive.init(directory.path);
   }
   await Hive.openBox<String>('CRUD');
+  await Hive.openBox<List<String>>('localhost');
+  // what i am planning to store
+  // date : [Task1, Task2, Task3]
 
   setPathUrlStrategy();
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (context) => AuthCubit()),
-      BlocProvider(create: (context) => UserBloc())
+      BlocProvider(create: (context) => UserBloc()),
+      BlocProvider(create: (context) => TaskBloc()),
     ],
     child: MaterialApp.router(
       debugShowCheckedModeBanner: false,

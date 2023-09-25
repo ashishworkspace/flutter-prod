@@ -1,6 +1,5 @@
 class AuthState {
   final bool? userLoggedIn;
-
   AuthState({this.userLoggedIn});
 }
 

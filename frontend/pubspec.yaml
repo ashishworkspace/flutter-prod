@@ -47,6 +47,8 @@ dependencies:
   url_strategy: ^0.2.0
   shared_preferences: ^2.2.1
   path_provider: ^2.1.1
+  intl: ^0.18.1
+  date_picker_timeline: ^1.2.5
 
 dev_dependencies:
   flutter_test:
